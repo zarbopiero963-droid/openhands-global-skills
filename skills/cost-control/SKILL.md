@@ -114,3 +114,7 @@ next_action: <STOP or exact approved action>
 
 ## Acceptance and status
 Each oracle requires authorized fixture, timestamp, model/provider version, exact expected/observed result, token/cost delta, negative evidence, cleanup and owner disposition. Tests involving real spend need separate owner authorization and budget. **Status: DOCUMENTED / PUBLISHED; runtime budget enforcement, model routing and billing attribution NOT CERTIFIED.**
+
+
+## GS-08-CACHE — Dedicated cache qualification
+See [docs/CACHE_STRATEGY.md](../../docs/CACHE_STRATEGY.md) for five cache layers, invalidation policy, security and twelve additional cases GS08-C01…GS08-C12. These are **supplemental** to the original 24 GS08-T cases and are NOT runtime certified. Provider prompt cache availability and savings must be measured, not assumed.
