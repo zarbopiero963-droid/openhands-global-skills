@@ -17,3 +17,15 @@ Reusable, repository-agnostic guidance. **PREPARED — NOT CERTIFIED**. No autom
 Read [GLOBAL_POLICY.md](GLOBAL_POLICY.md) and [CERTIFICATION.md](CERTIFICATION.md). Test exclusively on `zarbopiero963-droid/cloud-ai-developer-test` until new owner authorization.
 
 Marketplace loader format, discovery, auto-load, and owner-only technical enforcement are **UNVERIFIED**. Do not enable Auto-Load until qualified.
+
+## Operational guides
+- [Architecture and trust boundaries](docs/ARCHITECTURE.md)
+- [Owner-only approvals](docs/OWNER_APPROVAL.md)
+- [Repository onboarding and AGENTS/CLAUDE instructions](docs/REPOSITORY_GUIDE.md)
+- [Atomic test oracles](docs/TEST_ORACLES.md)
+- [Cost and model policy](docs/COST_AND_MODELS.md)
+- [Browser screenshots and artifacts](docs/ARTIFACTS_AND_BROWSER.md)
+- [MCP and notifications](docs/MCP_AND_NOTIFICATIONS.md)
+- [Lot A–D roadmap](docs/ROADMAP.md)
+
+Marketplace discovery was observed as 10/10 in the owner's OpenHands UI with Auto-Load OFF. Actual skill execution and security enforcement remain untested. See [master issue #1](https://github.com/zarbopiero963-droid/openhands-global-skills/issues/1).
