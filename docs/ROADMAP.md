@@ -17,3 +17,6 @@ GS-01..GS-10: static docs first, marketplace discovery observed 10/10 on Android
 
 ## Exit criteria
 Each lot has enumerated denominator, immutable evidence, PASS/FAIL/BLOCKED states and explicit owner acceptance. No blanket 100% based on documents alone.
+
+## GS-08-CACHE (before paid runtime qualification)
+Dedicated [cache strategy](CACHE_STRATEGY.md) documents prompt caching, immutable GitHub content, deterministic result reuse, checkpoints, invalidation and 12 supplemental cases GS08-C01…C12. Original skill oracle denominator remains 200; extended catalog contains 212 declared cases (200 base + 12 cache), not 212 certified tests. No cache runtime proof yet.
