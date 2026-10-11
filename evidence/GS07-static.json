@@ -1,0 +1,13 @@
+{
+  "errors": [],
+  "group": "GS07",
+  "input_sha256": {
+    "fixtures/oracles/GS07.json": "133c019e22e00316303096996817f880e9f1fee4c1b9ce0829287e45a382e0f0"
+  },
+  "records_checked": 24,
+  "runtime_certified": 0,
+  "runtime_tests_executed": 0,
+  "schema_version": 1,
+  "scope": "STATIC_SPECIFICATION_ONLY",
+  "verdict": "PASS"
+}
