@@ -1,0 +1,50 @@
+{
+  "phase": "phase1",
+  "python": "3.12.14",
+  "runs": [
+    {
+      "command": [
+        "python3",
+        "tools/validate_catalog.py"
+      ],
+      "started_utc": "2026-10-11T12:17:24.550573+00:00",
+      "finished_utc": "2026-10-11T12:17:24.822635+00:00",
+      "exit_code": 0,
+      "collected": null,
+      "passed": null,
+      "failed": null,
+      "errors": null,
+      "skipped": null
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "started_utc": "2026-10-11T12:17:24.822651+00:00",
+      "finished_utc": "2026-10-11T12:17:31.404848+00:00",
+      "exit_code": 0,
+      "collected": 51,
+      "passed": 51,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "openhands_runtime_tests": 0,
+  "code_sha256": {
+    "tools/cache_policy.py": "29d3168116c6da0753810967f128b04131334d87f86c6355ad1634be923a05c6",
+    "tools/inspect_oracle.py": "28d96c0b1821a4029d02e151997ee78495b40d46e95f9fb65cde9afb67f1cc1e",
+    "tools/validate_catalog.py": "8c2226f6396384f34d9fa04de426a4cfe86d44578cd73e3a8424e3a202247248",
+    "tests/test_cache_policy.py": "30cc75b01b8b5139d9f40cb084b38adff23b8e0500dbadecb2063388508c8d97",
+    "tests/test_independent_audit.py": "5cd9a6a3bcfa3c5f59e84d22cc8da83a8102bc2fa6bbfc450eb911c9c497f69f",
+    "tests/test_validate_catalog.py": "922906cba081b18a1c70d1e8225ac15c9bc47cd66e13c7d32b5298ff135ab69b"
+  }
+}

@@ -10,6 +10,28 @@ ROOT = Path(__file__).resolve().parents[1]
 COUNTS = [12, 14, 16, 18, 20, 22, 24, 24, 24, 26]
 FIELDS = {'id','requirement_id','requirement','source','source_heading','normative_section','dependencies','fixture','preconditions','procedure','expected','test_type','evidence_required','criteria','cleanup','economic_limit','owner_authorization','status'}
 
+def record_shape(r):
+    """Validate types before semantic checks; malformed fixtures are findings."""
+    errors=[]
+    for field in sorted(FIELDS):
+        if field not in r or r[field] in ('',None,[],{}): errors.append('missing '+field)
+    strings=('id','requirement_id','requirement','source','source_heading','normative_section','test_type','cleanup','owner_authorization')
+    lists=('dependencies','preconditions','procedure','evidence_required')
+    for k in strings:
+        if not isinstance(r.get(k),str) or not r[k].strip(): errors.append('invalid string '+k)
+    for k in lists:
+        if not isinstance(r.get(k),list) or not r[k] or any(not isinstance(x,str) or not x.strip() for x in r[k]): errors.append('invalid list '+k)
+    for k in ('fixture','expected','criteria','economic_limit','status'):
+        if not isinstance(r.get(k),dict) or not r[k]: errors.append('invalid object '+k)
+    f=r.get('fixture')
+    if isinstance(f,dict):
+        if any(not isinstance(f.get(k),str) or not f[k].strip() for k in ('scenario','setup')) or f.get('synthetic_only') is not True:
+            errors.append('invalid fixture fields')
+    if isinstance(r.get('status'),dict):
+        for k in ('documented','fixture_implemented','runtime_implemented','runtime_tested','runtime_certified'):
+            if type(r['status'].get(k)) is not bool: errors.append('invalid boolean status '+k)
+    return errors
+
 def validate(root, group=None):
     errors = []
     allowed_groups={f'GS{i:02d}' for i in range(1,11)}|{'GS08-CACHE'}
@@ -25,9 +47,13 @@ def validate(root, group=None):
             if not isinstance(rows,list) or any(not isinstance(row,dict) for row in rows):
                 errors.append(path.name+': expected list of record objects')
                 continue
-            records.extend(rows)
             for r in rows:
                 tag = r.get('id', str(path))
+                shape_errors=record_shape(r)
+                if shape_errors:
+                    errors.extend(f'{tag}: {e}' for e in shape_errors)
+                    continue
+                records.append(r)
                 for field in sorted(FIELDS):
                     if field not in r or r[field] in ('',None,[],{}):
                         errors.append(f'{tag}: missing {field}')
@@ -81,6 +107,7 @@ def global_checks(root, records):
     skills=sorted((root/'skills').glob('*/SKILL.md'))
     if len(skills)!=10: errors.append('skill count must equal 10')
     original={}
+    source_expected={}
     names=[]
     for p in skills:
         text=p.read_text()
@@ -91,11 +118,15 @@ def global_checks(root, records):
         for oid,scenario,expected in re.findall(r'^\| (GS\d{2}-T\d{2}) \| (.*?) \| (.*?) \|$',text,re.M):
             if oid in original: errors.append('duplicate source oracle: '+oid)
             original[oid]=scenario
+            source_expected[oid]=expected
     if len(set(names))!=10: errors.append('frontmatter names not unique/complete')
     base={f'GS{n:02d}-T{i:02d}' for n,c in enumerate(COUNTS,1) for i in range(1,c+1)}
     if set(original)!=base: errors.append('original 200 source IDs differ')
     cache=root/'docs/CACHE_STRATEGY.md'
     cache_ids=re.findall(r'^\| (GS08-C\d{2}) \|',cache.read_text(),re.M) if cache.is_file() else []
+    if cache.is_file():
+        for oid,scenario,expected in re.findall(r'^\| (GS08-C\d{2}) \| (.*?) \| (.*?) \|$',cache.read_text(),re.M):
+            source_expected[oid]=expected
     if cache_ids != [f'GS08-C{i:02d}' for i in range(1,13)]: errors.append('cache 12 source IDs differ')
     requirements=[r.get('requirement_id') for r in records]
     if len(set(requirements))!=len(requirements): errors.append('duplicate requirement IDs')
@@ -105,9 +136,13 @@ def global_checks(root, records):
     index_text=index.read_text() if index.is_file() else ''
     for r in records:
         oid=r.get('id','')
+        if oid in source_expected and source_expected[oid] not in r.get('requirement',''):
+            errors.append(oid+': requirement/source oracle drift')
         if oid in original and r.get('fixture',{}).get('scenario')!=original[oid]: errors.append(oid+': source scenario drift')
         if len(re.findall(r'^\| '+re.escape(r.get('requirement_id',''))+r' \| '+re.escape(oid)+r' \|',trace_text,re.M))!=1: errors.append(oid+': trace missing/duplicate')
         if len(re.findall(r'^\| '+re.escape(oid)+r' \|',index_text,re.M))!=1: errors.append(oid+': index missing/duplicate')
+    trace_ids=re.findall(r'^\| (REQ-GS\d{2}-[TC]\d{2}) \|',trace_text,re.M)
+    if set(trace_ids)!=set(requirements): errors.append('unmapped or missing trace requirements')
     # Eight clauses are tested in the normative numbered contract, not a mention count.
     policy=root/'docs/OWNER_APPROVAL.md'
     clauses=re.findall(r'^([1-8])\. (.+)$',policy.read_text(),re.M) if policy.is_file() else []

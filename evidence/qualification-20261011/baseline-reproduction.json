@@ -1,0 +1,52 @@
+{
+  "baseline": "b758d9370c36fa73b364d8016ddfecfd5f63c171",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "runs": [
+    {
+      "name": "baseline-validator",
+      "command": [
+        "python3",
+        "tools/validate_catalog.py"
+      ],
+      "cwd": "immutable git archive b758d937",
+      "started_utc": "2026-10-11T12:16:30.461763+00:00",
+      "finished_utc": "2026-10-11T12:16:30.743811+00:00",
+      "exit_code": 0,
+      "collected": null,
+      "passed": null,
+      "failed": null,
+      "errors": null,
+      "skipped": null
+    },
+    {
+      "name": "baseline-tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "immutable git archive b758d937",
+      "started_utc": "2026-10-11T12:16:30.743829+00:00",
+      "finished_utc": "2026-10-11T12:16:35.736104+00:00",
+      "exit_code": 0,
+      "collected": 45,
+      "passed": 45,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "manifest_files": 64,
+  "manifest_mismatches": [],
+  "records": 212,
+  "unique_ids": 212,
+  "fixture_kind": "synthetic prose specifications, not executable OpenHands adapters",
+  "runtime_executed": 0
+}

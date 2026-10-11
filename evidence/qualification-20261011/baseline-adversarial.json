@@ -1,0 +1,21 @@
+[
+  {
+    "mutation": "numeric_procedure",
+    "verdict": "PASS",
+    "errors": []
+  },
+  {
+    "mutation": "list_expected",
+    "verdict": "PASS",
+    "errors": []
+  },
+  {
+    "mutation": "empty_requirement",
+    "verdict": "PASS",
+    "errors": []
+  },
+  {
+    "mutation": "wrong_fixture_type",
+    "exception": "AttributeError"
+  }
+]
