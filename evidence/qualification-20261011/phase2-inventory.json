@@ -1,0 +1,78 @@
+{
+  "skills": [
+    {
+      "path": "skills/atomic-workflow/SKILL.md",
+      "sha256": "607c7270f955e578eeefff41ed9a54a1d8475335c7e3917d044cb547b66d4a4d",
+      "name": "atomic-workflow",
+      "description_present": true,
+      "dynamic_shell_marker_present": false
+    },
+    {
+      "path": "skills/browser-e2e/SKILL.md",
+      "sha256": "30c352c16dd0597cc4687e4d2b3c81de10f30f654226cc3f9d1898bba3635fbf",
+      "name": "browser-e2e",
+      "description_present": true,
+      "dynamic_shell_marker_present": false
+    },
+    {
+      "path": "skills/cost-control/SKILL.md",
+      "sha256": "e3d9c48c31695783543d9e2240e852e5de5d2e6d79922a3ed2979b86ec6dea3f",
+      "name": "cost-control",
+      "description_present": true,
+      "dynamic_shell_marker_present": false
+    },
+    {
+      "path": "skills/github-certification/SKILL.md",
+      "sha256": "97ecc4b94a25e195ae561025a365f97503b6063eb2bf1f751e13a08422406307",
+      "name": "github-certification",
+      "description_present": true,
+      "dynamic_shell_marker_present": false
+    },
+    {
+      "path": "skills/mcp-orchestration/SKILL.md",
+      "sha256": "8ab664ce080f3a175e0f9bc4005871061140517ba113499420a167f1d207fe07",
+      "name": "mcp-orchestration",
+      "description_present": true,
+      "dynamic_shell_marker_present": false
+    },
+    {
+      "path": "skills/owner-approval/SKILL.md",
+      "sha256": "68b308b40daac8a063aea6bd86678218377ea958fb9f2a7b6a6af252285b9b7d",
+      "name": "owner-approval",
+      "description_present": true,
+      "dynamic_shell_marker_present": false
+    },
+    {
+      "path": "skills/owner-notifications/SKILL.md",
+      "sha256": "7b29f3db968a7621cc1edcddf50d411b284eacf88745c69c9ea264b0a8cd99ee",
+      "name": "owner-notifications",
+      "description_present": true,
+      "dynamic_shell_marker_present": false
+    },
+    {
+      "path": "skills/python-testing/SKILL.md",
+      "sha256": "f163b5adc7568a0b39d3ce699715d7ba7c81d5ad3fc652e3cba4e91d0d93d043",
+      "name": "python-testing",
+      "description_present": true,
+      "dynamic_shell_marker_present": false
+    },
+    {
+      "path": "skills/recovery-checkpoint/SKILL.md",
+      "sha256": "0a49d464e7770cee744ffe7bf14806a106dee662cb4eb12370cb5c2bbf4fbfb0",
+      "name": "recovery-checkpoint",
+      "description_present": true,
+      "dynamic_shell_marker_present": false
+    },
+    {
+      "path": "skills/repository-discovery/SKILL.md",
+      "sha256": "705e8db79a98bc39c45427e0e25e1c4407097309d1ec683ab19e3af638e22275",
+      "name": "repository-discovery",
+      "description_present": true,
+      "dynamic_shell_marker_present": false
+    }
+  ],
+  "count": 10,
+  "loader_executed": false,
+  "marketplace_current": "BLOCKED_AUTH",
+  "auto_load_current": "UNKNOWN"
+}
