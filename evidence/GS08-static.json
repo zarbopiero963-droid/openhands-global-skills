@@ -1,0 +1,13 @@
+{
+  "errors": [],
+  "group": "GS08",
+  "input_sha256": {
+    "fixtures/oracles/GS08.json": "334e5624728d59aa6173f26f4ac7973a53d627093b85e1a36b4ef1f79d932c14"
+  },
+  "records_checked": 24,
+  "runtime_certified": 0,
+  "runtime_tests_executed": 0,
+  "schema_version": 1,
+  "scope": "STATIC_SPECIFICATION_ONLY",
+  "verdict": "PASS"
+}
