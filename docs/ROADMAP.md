@@ -46,3 +46,7 @@ The goal is a **single, personal, repository-agnostic OpenHands development agen
 6. Optional H24 after verified economic eligibility, retention, recovery, notifications, owner gates and explicit activation decision. Auto-Load remains OFF until separately approved.
 
 A–D above are historical capability headings, not a substitute for a new runtime denominator. Concurrency/fencing cases remain defensive specifications for rejecting accidental parallel activity; no fleet or distributed platform is introduced. Scope remains one personal agent, no Control Center, knowledge graph, GPU fleet or autonomous skill generation.
+
+## Independent qualification update — 2026-10-11
+
+See [five-phase verification and current admission status](qualification/REPORT.md). Baseline b758d937 is preserved: 45 original tests reproduced; validator defects corrected. Current account, loader, security and economic checks remain BLOCKED/NON VERIFICABILE. No OpenHands runtime or paid request was executed. This dated update qualifies earlier documentary completion claims; it does not erase historical evidence or authorize the one-shot test.

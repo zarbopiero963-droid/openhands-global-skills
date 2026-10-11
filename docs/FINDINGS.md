@@ -44,3 +44,7 @@ Adapter absence is not disguised as runtime implementation. Browser receipt, acc
 
 - The expanded regression run initially failed because its temporary catalog copy excluded evidence files referenced by the new matrix. The harness now copies those files too; the failing log and execution record are retained under `evidence/*initial-failure*`. Subsequent 45-test run passed, exit 0. No production or agent behavior was involved.
 - GS09-T20 now asserts actual context fits the configured 1000-byte limit rather than encoding a misleading exact-byte-count field. Original source oracle and historical per-card hash remain unchanged; the final manifest binds the refined record.
+
+## Independent qualification update — 2026-10-11
+
+See [five-phase verification and current admission status](qualification/REPORT.md). Baseline b758d937 is preserved: 45 original tests reproduced; validator defects corrected. Current account, loader, security and economic checks remain BLOCKED/NON VERIFICABILE. No OpenHands runtime or paid request was executed. This dated update qualifies earlier documentary completion claims; it does not erase historical evidence or authorize the one-shot test.

@@ -40,3 +40,7 @@ Current detailed records: [audit protocol](docs/audits/PROTOCOL.md), [oracle ind
 Current [dimension matrix](docs/CERTIFICATION_MATRIX.md) distinguishes the 212 specifications from runtime results.
 
 [Final documentary/static report](docs/FINAL_REPORT.md).
+
+## Independent qualification update — 2026-10-11
+
+See [five-phase verification and current admission status](docs/qualification/REPORT.md). Baseline b758d937 is preserved: 45 original tests reproduced; validator defects corrected. Current account, loader, security and economic checks remain BLOCKED/NON VERIFICABILE. No OpenHands runtime or paid request was executed. This dated update qualifies earlier documentary completion claims; it does not erase historical evidence or authorize the one-shot test.

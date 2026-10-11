@@ -14,3 +14,7 @@ Checks: required files; exactly ten frontmatter names/descriptions; original ID 
 Regression tests deliberately remove fields, duplicate IDs, alter headings/counts, break links, remove reserved classes and inject unsupported certification; they must produce failures. Cache reference tests mutate repository/scope/SHAs/locks/runtime, approval, integrity and action reconciliation; missing accounting remains UNKNOWN. No test sends a provider request, opens a browser or writes outside temporary local test directories.
 
 The 212 checks measure specification coverage. The local unittest count measures validator/reference-code regressions, not 212 executed OpenHands scenarios. Report these denominators separately. Local runtime of Python validators is not OpenHands runtime certification.
+
+## Independent qualification update — 2026-10-11
+
+See [five-phase verification and current admission status](qualification/REPORT.md). Baseline b758d937 is preserved: 45 original tests reproduced; validator defects corrected. Current account, loader, security and economic checks remain BLOCKED/NON VERIFICABILE. No OpenHands runtime or paid request was executed. This dated update qualifies earlier documentary completion claims; it does not erase historical evidence or authorize the one-shot test.

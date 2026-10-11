@@ -1,0 +1,83 @@
+test_checkpoint_requires_reconciliation (test_cache_policy.CachePolicyTests.test_checkpoint_requires_reconciliation) ... ok
+test_commit_path_blob_each_invalidates (test_cache_policy.CachePolicyTests.test_commit_path_blob_each_invalidates) ... ok
+test_complete_metadata_still_not_runtime_proof (test_cache_policy.CachePolicyTests.test_complete_metadata_still_not_runtime_proof) ... ok
+test_corrupt_payload_rejected (test_cache_policy.CachePolicyTests.test_corrupt_payload_rejected) ... ok
+test_cross_repository_denied (test_cache_policy.CachePolicyTests.test_cross_repository_denied) ... ok
+test_deterministic_environment_invalidation (test_cache_policy.CachePolicyTests.test_deterministic_environment_invalidation) ... ok
+test_expired_approval_blocks_immutable (test_cache_policy.CachePolicyTests.test_expired_approval_blocks_immutable) ... ok
+test_immutable_match (test_cache_policy.CachePolicyTests.test_immutable_match) ... ok
+test_inputs_not_mutated (test_cache_policy.CachePolicyTests.test_inputs_not_mutated) ... ok
+test_invalid_token_counts (test_cache_policy.CachePolicyTests.test_invalid_token_counts) ... ok
+test_missing_provider_fields_unknown (test_cache_policy.CachePolicyTests.test_missing_provider_fields_unknown) ... ok
+test_model_provider_change_invalidates_claim (test_cache_policy.CachePolicyTests.test_model_provider_change_invalidates_claim) ... ok
+test_mutable_data_always_fresh_even_matching (test_cache_policy.CachePolicyTests.test_mutable_data_always_fresh_even_matching) ... ok
+test_negative_savings_preserved (test_cache_policy.CachePolicyTests.test_negative_savings_preserved) ... ok
+test_net_savings_no_double_subtraction (test_cache_policy.CachePolicyTests.test_net_savings_no_double_subtraction) ... ok
+test_nonfinite_cost_invalid (test_cache_policy.CachePolicyTests.test_nonfinite_cost_invalid) ... ok
+test_policy_change_invalidates (test_cache_policy.CachePolicyTests.test_policy_change_invalidates) ... ok
+test_read_write_tokens_kept_separate (test_cache_policy.CachePolicyTests.test_read_write_tokens_kept_separate) ... ok
+test_scope_changes_denied (test_cache_policy.CachePolicyTests.test_scope_changes_denied) ... ok
+test_secret_or_unscanned_rejected (test_cache_policy.CachePolicyTests.test_secret_or_unscanned_rejected) ... ok
+test_unknown_key_denied (test_cache_policy.CachePolicyTests.test_unknown_key_denied) ... ok
+test_unknown_pending_overlapping_costs (test_cache_policy.CachePolicyTests.test_unknown_pending_overlapping_costs) ... ok
+test_unsupported_provider_unknown (test_cache_policy.CachePolicyTests.test_unsupported_provider_unknown) ... ok
+test_list_assertions_rejected (test_independent_audit.IndependentAuditRegressionTests.test_list_assertions_rejected) ... ok
+test_numeric_procedure_rejected (test_independent_audit.IndependentAuditRegressionTests.test_numeric_procedure_rejected) ... ok
+test_requirement_not_related_to_source_rejected (test_independent_audit.IndependentAuditRegressionTests.test_requirement_not_related_to_source_rejected) ... ok
+test_unmapped_trace_row_rejected (test_independent_audit.IndependentAuditRegressionTests.test_unmapped_trace_row_rejected) ... ok
+test_wrong_fixture_type_reported_not_crash (test_independent_audit.IndependentAuditRegressionTests.test_wrong_fixture_type_reported_not_crash) ... ok
+test_wrong_id_type_reported_not_crash (test_independent_audit.IndependentAuditRegressionTests.test_wrong_id_type_reported_not_crash) ... ok
+test_budget_nonfinite_negative_and_boolean_block (test_qualification_gate.QualificationGateTests.test_budget_nonfinite_negative_and_boolean_block) ... ok
+test_complete_declarations_never_authorize_execution (test_qualification_gate.QualificationGateTests.test_complete_declarations_never_authorize_execution) ... ok
+test_duration_and_unpinned_head_block (test_qualification_gate.QualificationGateTests.test_duration_and_unpinned_head_block) ... ok
+test_each_missing_gate_blocks (test_qualification_gate.QualificationGateTests.test_each_missing_gate_blocks) ... ok
+test_expiry_missing_naive_and_expired_block (test_qualification_gate.QualificationGateTests.test_expiry_missing_naive_and_expired_block) ... ok
+test_insufficient_balance_blocks (test_qualification_gate.QualificationGateTests.test_insufficient_balance_blocks) ... ok
+test_malformed_root_blocks (test_qualification_gate.QualificationGateTests.test_malformed_root_blocks) ... ok
+test_replayed_approval_blocks (test_qualification_gate.QualificationGateTests.test_replayed_approval_blocks) ... ok
+test_scope_or_command_expansion_blocks (test_qualification_gate.QualificationGateTests.test_scope_or_command_expansion_blocks) ... ok
+test_truthy_string_cannot_pass_security (test_qualification_gate.QualificationGateTests.test_truthy_string_cannot_pass_security) ... ok
+test_bad_frontmatter (test_validate_catalog.CatalogMutationTests.test_bad_frontmatter) ... ok
+test_broken_anchor (test_validate_catalog.CatalogMutationTests.test_broken_anchor) ... ok
+test_broken_markdown_link (test_validate_catalog.CatalogMutationTests.test_broken_markdown_link) ... ok
+test_duplicate_id (test_validate_catalog.CatalogMutationTests.test_duplicate_id) ... ok
+test_empty_assertions (test_validate_catalog.CatalogMutationTests.test_empty_assertions) ... ok
+test_gap_in_id (test_validate_catalog.CatalogMutationTests.test_gap_in_id) ... ok
+test_invalid_record_shape (test_validate_catalog.CatalogMutationTests.test_invalid_record_shape) ... ok
+test_missing_cache_case (test_validate_catalog.CatalogMutationTests.test_missing_cache_case) ... ok
+test_missing_normative_section (test_validate_catalog.CatalogMutationTests.test_missing_normative_section) ... ok
+test_missing_owner_category (test_validate_catalog.CatalogMutationTests.test_missing_owner_category) ... ok
+test_missing_procedure (test_validate_catalog.CatalogMutationTests.test_missing_procedure) ... ok
+test_missing_required_document (test_validate_catalog.CatalogMutationTests.test_missing_required_document) ... ok
+test_missing_source_heading (test_validate_catalog.CatalogMutationTests.test_missing_source_heading) ... ok
+test_missing_trace_row (test_validate_catalog.CatalogMutationTests.test_missing_trace_row) ... ok
+test_repeatable_error_order (test_validate_catalog.CatalogMutationTests.test_repeatable_error_order) ... ok
+test_source_escape_rejected (test_validate_catalog.CatalogMutationTests.test_source_escape_rejected) ... ok
+test_source_scenario_drift (test_validate_catalog.CatalogMutationTests.test_source_scenario_drift) ... ok
+test_unapproved_spend (test_validate_catalog.CatalogMutationTests.test_unapproved_spend) ... ok
+test_unknown_group_rejected (test_validate_catalog.CatalogMutationTests.test_unknown_group_rejected) ... ok
+test_unsupported_runtime_claim (test_validate_catalog.CatalogMutationTests.test_unsupported_runtime_claim) ... ok
+test_unsupported_runtime_state (test_validate_catalog.CatalogMutationTests.test_unsupported_runtime_state) ... ok
+test_valid_catalog (test_validate_catalog.CatalogMutationTests.test_valid_catalog) ... FAIL
+
+======================================================================
+FAIL: test_valid_catalog (test_validate_catalog.CatalogMutationTests.test_valid_catalog)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/df2dd88d95a1/openhands-global-skills/tests/test_validate_catalog.py", line 21, in test_valid_catalog
+    report=validate(self.root);self.assertEqual(report['errors'],[]);self.assertEqual(report['records_checked'],212)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['docs/qualification/REPORT.md: broken lin[58 chars]son'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'docs/qualification/REPORT.md: broken link ../../evidence/qualification-20261011/phase5-execution.json'
+
++ []
+- ['docs/qualification/REPORT.md: broken link '
+-  '../../evidence/qualification-20261011/phase5-execution.json']
+
+----------------------------------------------------------------------
+Ran 61 tests in 6.809s
+
+FAILED (failures=1)

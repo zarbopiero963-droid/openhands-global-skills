@@ -1,0 +1,31 @@
+{
+  "command": [
+    "python3",
+    "tools/qualification_gate.py",
+    "fixtures/qualification-admission.json"
+  ],
+  "exit_code": 3,
+  "output": {
+    "blockers": [
+      "available_balance_usd",
+      "budget_usd",
+      "cloud_cost_resolved",
+      "expires_utc",
+      "ledger_reconciled",
+      "model_id",
+      "model_verified",
+      "owner_decision_id",
+      "owner_evidence_reference",
+      "owner_evidence_verified",
+      "phases_reviewed",
+      "provider",
+      "scope_verified",
+      "security_verified",
+      "skills_bundle_verified",
+      "stop_cleanup_defined"
+    ],
+    "execution_authorized": false,
+    "limitation": "No identity authentication, ledger verification, permission enforcement or session creation. Human verifies evidence before any separate execution.",
+    "verdict": "BLOCKED"
+  }
+}

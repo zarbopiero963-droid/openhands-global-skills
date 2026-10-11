@@ -1,0 +1,25 @@
+{
+  "errors": [
+    "docs/qualification/REPORT.md: broken link ../../evidence/qualification-20261011/phase5-execution.json"
+  ],
+  "group": "ALL",
+  "input_sha256": {
+    "fixtures/oracles/GS01.json": "1bbbcd5aaf62b73101d834a6a437b2f21ad5e5b4b2e0f1cd3e4906f54924ba51",
+    "fixtures/oracles/GS02.json": "e4fc2a3734aefe9b3a270c776712a97874f7095b7612caa3769ecc0f188a1d0e",
+    "fixtures/oracles/GS03.json": "7061400eb5ffcdf939cd1705541399c6f9f51c10425f898adee698a6b06abd88",
+    "fixtures/oracles/GS04.json": "b20c1767b769714d49f4a150704e3964ec79bab1f3aed4fa69115de4414d4fcf",
+    "fixtures/oracles/GS05.json": "03930a56e30bc68e5e91ae7b1808332b727b9399f6c73d63b737217b607feeb8",
+    "fixtures/oracles/GS06.json": "b97226512e28ca20a011b47e40853c0c13c893fa486d01bb58090f44218eb6bf",
+    "fixtures/oracles/GS07.json": "133c019e22e00316303096996817f880e9f1fee4c1b9ce0829287e45a382e0f0",
+    "fixtures/oracles/GS08-CACHE.json": "1cbda668d6e32e7d36291290d48474575307a2a9b1a6aa101e52bb7a382de0e5",
+    "fixtures/oracles/GS08.json": "334e5624728d59aa6173f26f4ac7973a53d627093b85e1a36b4ef1f79d932c14",
+    "fixtures/oracles/GS09.json": "75b5d29fce3b6641b0f8c0f8bbd27ba8a6d93d7a15a3bb72394af62a991b4c29",
+    "fixtures/oracles/GS10.json": "6d881cafb576b96942efa6802da4bd770703a28a7901a5088cace232bda60e2a"
+  },
+  "records_checked": 212,
+  "runtime_certified": 0,
+  "runtime_tests_executed": 0,
+  "schema_version": 1,
+  "scope": "STATIC_SPECIFICATION_ONLY",
+  "verdict": "FAIL"
+}
