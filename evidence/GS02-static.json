@@ -1,0 +1,13 @@
+{
+  "errors": [],
+  "group": "GS02",
+  "input_sha256": {
+    "fixtures/oracles/GS02.json": "e4fc2a3734aefe9b3a270c776712a97874f7095b7612caa3769ecc0f188a1d0e"
+  },
+  "records_checked": 14,
+  "runtime_certified": 0,
+  "runtime_tests_executed": 0,
+  "schema_version": 1,
+  "scope": "STATIC_SPECIFICATION_ONLY",
+  "verdict": "PASS"
+}
