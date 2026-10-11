@@ -40,3 +40,8 @@ Status: STATIC REVIEW WITH OPEN GAPS. No OpenHands execution or runtime certific
 For each oracle require authorized test fixture SHA, exact command/tool trace, UTC, expected/observed result, denied side effects, budget delta, cleanup, reviewer and owner acceptance. Do not use production systems for negative tests.
 
 **Verdict:** 16/16 requirement mappings documented, 0/16 runtime tested, 0/16 certified. Semantic review has unresolved gaps; no 100% claim.
+
+
+## Follow-up — 2026-10-11
+
+This preliminary report is preserved. The [individual supplement](audits/GS03.md) and [finding register](FINDINGS.md) record current documentary remediation. No historical runtime verdict has been promoted.

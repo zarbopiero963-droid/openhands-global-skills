@@ -36,3 +36,8 @@ Status: STATIC REVIEW WITH OPEN GAPS. No OpenHands execution.
 For each oracle require fixture SHA, approved test scope, tool trace, expected and observed behavior, UTC, cost, cleanup and owner acceptance. Never infer runtime behavior from documentation alone.
 
 **Result:** 14/14 oracle-to-requirement mappings documented; 0/14 executed; 0/14 runtime certified. This document is a static review, not a production safety guarantee.
+
+
+## Follow-up — 2026-10-11
+
+This preliminary report is preserved. The [individual supplement](audits/GS02.md) and [finding register](FINDINGS.md) record current documentary remediation. No historical runtime verdict has been promoted.

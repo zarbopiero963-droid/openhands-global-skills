@@ -53,3 +53,14 @@ Invalidate or revalidate on: new commit/branch SHA; file or lockfile changes; in
 
 ## Evidence and exit gates
 For each case record model/provider version, source SHA, scope, key/TTL, expected and observed result, request IDs, input/output/cache token fields, billed cost, storage cost, UTC, evidence and owner acceptance. Pure static checks can be certified separately from provider runtime behavior. No blanket 100% or hard-cost guarantee without execution evidence.
+
+
+## Static implementation supplement — 2026-10-11
+
+The historical NOT IMPLEMENTED status above refers to integration and provider caching. A pure, offline reference policy now exists in [cache_policy.py](../tools/cache_policy.py), with [local tests](../tests/test_cache_policy.py); it performs no persistence, provider call or OpenHands integration. [Individual supplemental records](audits/GS08-CACHE.md) define all twelve cases.
+
+Immutable keys include repository identity, authorization scope, policy hash and schema version. Blob keys additionally bind commit/path/blob SHA; deterministic keys bind code/input/lock/runtime/environment/parameters; checkpoints bind checkpoint ID/revision/action-ledger digest and require reconciliation. Approvals, live data, quota, CI, branch state, permissions and budgets always require fresh authoritative reads. Unknown keys, failed integrity or missing secret scan fail closed. Secret-scan metadata is an input assertion, not an implemented general secret detector; integration must establish it before any persistence.
+
+Provider accounting records require actual model/provider/request ID, UTC, source, separately reported input/output/cache-read/cache-write tokens, documented token semantics and billed cost. Missing fields stay UNKNOWN. The reference checker never attests a real cache hit.
+
+For comparable disjoint finalized workloads: `net = uncached_billed - cached_billed - extra_storage - extra_revalidation - extra_summarization`. `cached_billed` already includes provider cache-read/write charges. Do not subtract cache-write or displayed discounts again. Extra charges must be disjoint from billed totals. Negative savings are valid; missing costs or pending settlement yield UNKNOWN. Counterfactual savings require a measured comparable uncached run; no paid benchmark is authorized now.

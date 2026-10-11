@@ -34,3 +34,15 @@ The goal is a **single, personal, repository-agnostic OpenHands development agen
 **Explicitly excluded from current scope:** multi-agent fleets, broad Software Engineering Control Center, autonomous skill generation, knowledge-graph platform, GPU fleet and complex distributed orchestration. These are not hidden prerequisites.
 
 **Execution policy:** finish documentary audits first; maintain Auto-Load OFF; test only cloud-ai-developer-test with explicit test authorization and budget; defer paid OpenHands until owner resolves economic block. One task per owner 'via'. Do not assume documentation enforces permissions.
+
+
+## Current ordered roadmap — 2026-10-11
+
+1. Documentary/static preparation: 10 skill specifications, 200 original + 12 supplemental cases, individual normative refinements, static validators and finding dispositions. Use [static validation](STATIC_VALIDATION.md) for reproducible evidence; no runtime promotion.
+2. Owner decisions and economic/security preflight: [decision register](OWNER_DECISIONS.md). No funding, credential changes or Cloud session by this mandate.
+3. One approved smoke session only: [one-shot plan](PREFLIGHT_ONE_SHOT_TEST.md), three pre-existing tests and STOP, with explicit fixture limitation.
+4. Future per-skill runtime qualification: provision authorized adapters/fixtures in the qualification repo only after separate write/run authorization; collect real traces, billing and acceptance per oracle.
+5. Browser/MCP/notifications/recovery/cache qualification in bounded sessions; account/provider-specific caching proof required. A single successful smoke run cannot close these gates.
+6. Optional H24 after verified economic eligibility, retention, recovery, notifications, owner gates and explicit activation decision. Auto-Load remains OFF until separately approved.
+
+A–D above are historical capability headings, not a substitute for a new runtime denominator. Concurrency/fencing cases remain defensive specifications for rejecting accidental parallel activity; no fleet or distributed platform is introduced. Scope remains one personal agent, no Control Center, knowledge graph, GPU fleet or autonomous skill generation.

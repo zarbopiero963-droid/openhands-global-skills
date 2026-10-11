@@ -1151,9 +1151,10 @@
       "Extract every expected field from independent observed evidence; compare using inspect_oracle.py --observation; preserve raw trace."
     ],
     "expected": {
-      "context_bytes_at_most": 1000,
       "truncation_disclosed": true,
-      "full_review_claim": false
+      "full_review_claim": false,
+      "context_within_limit": true,
+      "configured_limit_bytes": 1000
     },
     "test_type": "NEGATIVE",
     "evidence_required": [

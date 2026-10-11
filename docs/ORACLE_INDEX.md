@@ -206,3 +206,23 @@ This index is derived from the ten skill files. **200/200 IDs indexed; semantic 
 | GS10-T26 | [owner-notifications](../skills/owner-notifications/SKILL.md) | Unavailable durable ledger | Persistence/H24 NOT CERTIFIED | NOT_TESTED |
 
 Each row still requires: requirement mapping, fixture, exact test steps, evidence, budget delta, reviewer and owner acceptance. No runtime PASS is implied.
+
+
+## Current supplement — 2026-10-11
+
+The 200 original rows above remain the baseline. Detailed per-oracle fields now exist in `fixtures/oracles/GS01.json` through `GS10.json`; [protocol](audits/PROTOCOL.md). Each record has a unique REQ-GSxx-Tyy normative refinement, source section, fixture input, procedure and measurable assertions. Twelve additional cache IDs below bring the verified extended denominator to 212. Original Execution=NOT_TESTED means OpenHands runtime, not the offline specification validator.
+
+| Cache ID | Requirement | Specification | Runtime |
+|---|---|---|---|
+| GS08-C01 | REQ-GS08-C01 | [Case](audits/GS08-CACHE.md#gs08-c01) | BLOCKED |
+| GS08-C02 | REQ-GS08-C02 | [Case](audits/GS08-CACHE.md#gs08-c02) | BLOCKED |
+| GS08-C03 | REQ-GS08-C03 | [Case](audits/GS08-CACHE.md#gs08-c03) | BLOCKED |
+| GS08-C04 | REQ-GS08-C04 | [Case](audits/GS08-CACHE.md#gs08-c04) | BLOCKED |
+| GS08-C05 | REQ-GS08-C05 | [Case](audits/GS08-CACHE.md#gs08-c05) | BLOCKED |
+| GS08-C06 | REQ-GS08-C06 | [Case](audits/GS08-CACHE.md#gs08-c06) | BLOCKED |
+| GS08-C07 | REQ-GS08-C07 | [Case](audits/GS08-CACHE.md#gs08-c07) | BLOCKED |
+| GS08-C08 | REQ-GS08-C08 | [Case](audits/GS08-CACHE.md#gs08-c08) | BLOCKED |
+| GS08-C09 | REQ-GS08-C09 | [Case](audits/GS08-CACHE.md#gs08-c09) | BLOCKED |
+| GS08-C10 | REQ-GS08-C10 | [Case](audits/GS08-CACHE.md#gs08-c10) | BLOCKED |
+| GS08-C11 | REQ-GS08-C11 | [Case](audits/GS08-CACHE.md#gs08-c11) | BLOCKED |
+| GS08-C12 | REQ-GS08-C12 | [Case](audits/GS08-CACHE.md#gs08-c12) | BLOCKED |

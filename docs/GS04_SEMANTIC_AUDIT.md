@@ -13,3 +13,8 @@ Findings:
 - Distinguish an incomplete review from an overall not-ready verdict.
 
 All 18 scenarios remain NOT_TESTED. No merge or deployment was performed.
+
+
+## Follow-up — 2026-10-11
+
+This preliminary report is preserved. The [individual supplement](audits/GS04.md) and [finding register](FINDINGS.md) record current documentary remediation. No historical runtime verdict has been promoted.

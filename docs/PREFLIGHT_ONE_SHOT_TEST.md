@@ -60,3 +60,18 @@ next_action: STOP_AND_REQUEST_OWNER_DECISION_AFTER_PREFLIGHT
 
 ## Acceptance
 This document is complete as a **proposed one-shot test plan**. It is not a successful economic preflight or runtime certification. Owner sign-off is required for the exact execution and cost ceiling, and separate verification must resolve all blockers.
+
+
+## Read-only plan completion — 2026-10-11
+
+Qualification remote `main` reread through GitHub: `e4f5149c51cc6b925ff3503e97409d78bf4d12f8`. Four fixture files match the prior blob identities recorded in issue #1. No test executed and no repository write made. Local private clone was unavailable without CLI credentials; existing authorized GitHub connector provided read-only file access. This does not establish a clean remote working tree or sandbox availability.
+
+### Skill selection without cross-repository access
+
+Before a future session, owner must approve and verify the exact preloaded catalog snapshot/skill versions. The running test may read only the qualification repository and that approved installed instruction snapshot; it must not fetch this catalog or any other repository. Auto-Load remains OFF. Expected minimal selection: repository-discovery for baseline, python-testing for the three unittest cases, atomic-workflow for one task and STOP, with owner-approval/cost-control gates applicable. Record selections and rationale from the actual agent trace; marketplace visibility alone does not prove invocation. If the installed snapshot is unavailable, BLOCKED; do not silently enable Auto-Load.
+
+### Exact fixture acceptance and limitation
+
+Expected collected method IDs: `test_empty_input`, `test_known_vector`, `test_repeatability`; expected process exit 0 with 3 tests, 0 failures, 0 errors and 0 skips. Run once with a 60-second caller timeout and `PYTHONDONTWRITEBYTECODE=1`; no dependency installation. The third case compares the function with itself and has no independent arithmetic oracle. It can support only a narrow repeatability observation, not checksum correctness. An owner decision must either authorize replacement with expected value 20 for [12,35,70], or explicitly accept limited smoke scope. No such change is made here.
+
+Before launch, capture baseline allowlisted files/digests, denied network and write instrumentation, interpreter version and provider/Cloud accounting. After run, compare working-tree and tool/network ledgers independently of unittest output. Capture agent stop completion, late/in-flight billing and exact model/provider IDs. Success of 3 tests does not certify scope isolation, cost controls or all global skills. Missing instrumentation is BLOCKED, not PASS. Separate admission steps that can be verified before creating a sandbox from in-sandbox checks; creation itself requires owner budget/Cloud eligibility first.

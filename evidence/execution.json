@@ -1,0 +1,27 @@
+{
+  "start_utc": "2026-10-11T11:27:33.024128+00:00",
+  "end_utc": "2026-10-11T11:27:37.953382+00:00",
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "exit_code": 0,
+  "local_regression_tests": 45,
+  "scope": "LOCAL_VALIDATOR_AND_CACHE_REFERENCE_ONLY",
+  "openhands_runtime_tests": 0,
+  "qualification_smoke_executed": false,
+  "provider_calls": 0,
+  "paid_service_calls": 0,
+  "provider_spend": "NOT_MEASURED_NO_PROVIDER_CALLS",
+  "catalog_remote_baseline": "72d43b30d6d719f9acaec537cc81b12f5590207a",
+  "qualification_remote_head": "e4f5149c51cc6b925ff3503e97409d78bf4d12f8"
+}

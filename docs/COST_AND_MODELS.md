@@ -17,3 +17,8 @@ Stop. No top-up, no fallback to paid model, no automatic retry. Report remaining
 
 ## After task
 Compare OpenRouter actual cost and tokens with pre-run baseline; separately record Cloud sandbox and external service costs. Account for pending/in-flight requests. No inference of zero from absent telemetry.
+
+
+## Historical evidence correction — 2026-10-11
+
+The master issue's owner-screenshot record names key **OpenHands1** and reports condenser saved at 60 events / 40000 tokens, balance -$0.19 and Auto Top-Up OFF on 2026-10-10. The earlier key shorthand and proposed-setting description above are historical, not fresh account facts. Current balance, in-flight charges, effective guardrail, actual model/provider identity and Cloud eligibility remain UNKNOWN. No authenticated billing inspection or paid call was performed in this mandate. FIN-01 remains BLOCKED.

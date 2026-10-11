@@ -32,3 +32,10 @@ Only `zarbopiero963-droid/cloud-ai-developer-test` is authorized for future exec
 
 ## Completion report
 State changed files, exact commit, document/readback result, findings, unverified behavior, money spent if measurable and next action. Stop and await owner decision.
+
+
+## Documentary maintenance supplement — 2026-10-11
+
+The owner's master mandate authorizes sequential catalog documentation, fixture specifications and offline static validators, plus publication in this repository. It does not authorize OpenHands execution, paid calls, qualification-repository writes, merge, deploy, Auto-Load or H24. A per-card manual via applies when the owner requires one; the present mandate explicitly permits progression between documentary/static cards. The eight OWNER-ONLY categories and security policy are unchanged.
+
+Current detailed records: [audit protocol](docs/audits/PROTOCOL.md), [oracle index](docs/ORACLE_INDEX.md), [individual traceability](docs/REQUIREMENTS_TRACEABILITY.md), [static validation](docs/STATIC_VALIDATION.md), [finding dispositions](docs/FINDINGS.md), [decision register](docs/OWNER_DECISIONS.md). Historical observations above are not current runtime certification.
