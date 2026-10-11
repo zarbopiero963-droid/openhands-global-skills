@@ -1,0 +1,13 @@
+{
+  "errors": [],
+  "group": "GS09",
+  "input_sha256": {
+    "fixtures/oracles/GS09.json": "89e1bc9766680303770ea8be797d54b8dc6f252e0c07101b3da3a932fc5c2126"
+  },
+  "records_checked": 24,
+  "runtime_certified": 0,
+  "runtime_tests_executed": 0,
+  "schema_version": 1,
+  "scope": "STATIC_SPECIFICATION_ONLY",
+  "verdict": "PASS"
+}
