@@ -1,0 +1,712 @@
+[
+  {
+    "id": "GS08-C01",
+    "requirement_id": "REQ-GS08-C01",
+    "requirement": "For Identical stable prompt prefix on compatible model, MUST satisfy Measured cache-read tokens or UNKNOWN. Unknown provider evidence must block a cache-hit certification.",
+    "source": "docs/CACHE_STRATEGY.md",
+    "source_heading": "## Atomic qualification cases",
+    "normative_section": "Layer 1",
+    "dependencies": [
+      "OWNER_SCOPE",
+      "ECONOMIC_GATE",
+      "TRACE_CAPTURE"
+    ],
+    "fixture": {
+      "scenario": "Identical stable prompt prefix on compatible model",
+      "setup": "Same prompt twice; actual provider/model support and usage absent.",
+      "synthetic_only": true
+    },
+    "preconditions": [
+      "Apply docs/audits/PROTOCOL.md; static inspection only under current mandate.",
+      "For future runtime: independent trace capture, verified budget and owner-scoped qualification authorization."
+    ],
+    "procedure": [
+      "Print record: python3 tools/inspect_oracle.py GS08-C01",
+      "Prepare synthetic cache metadata; no provider calls or persistence.",
+      "Inspect required provider usage fields; unknown data cannot establish hit.",
+      "Compare independently observed fields with expected; retain input hash and actual output."
+    ],
+    "expected": {
+      "status": "UNKNOWN",
+      "cache_hit_claim": false
+    },
+    "test_type": "MIXED",
+    "evidence_required": [
+      "Pinned source and fixture digest",
+      "Actual tool/event trace with ordered calls and denied effects",
+      "Before/after state for all expected fields",
+      "UTC, runtime version, independently verified costs and owner acceptance"
+    ],
+    "criteria": {
+      "PASS": "All expected fields match authentic evidence; forbidden side effects count zero; acceptance gates satisfied.",
+      "FAIL": "A measured expected-field mismatch or forbidden side effect; retain actual output.",
+      "BLOCKED": "Runtime not authorized, economic gate unresolved, adapter unavailable or necessary observation missing."
+    },
+    "cleanup": "Reset only the synthetic case state; preserve sanitized evidence. No remote deletion or qualification-repo modification.",
+    "economic_limit": {
+      "external_spend_usd": 0,
+      "runtime": "BLOCKED_PENDING_OWNER_BUDGET",
+      "local_seconds": 60
+    },
+    "owner_authorization": "Master mandate permits catalog documentation/static validation only; future agent run and real side effects require separate scoped approval.",
+    "status": {
+      "documented": true,
+      "fixture_implemented": true,
+      "runtime_implemented": false,
+      "runtime_tested": false,
+      "runtime_certified": false,
+      "runtime_gate": "BLOCKED"
+    }
+  },
+  {
+    "id": "GS08-C02",
+    "requirement_id": "REQ-GS08-C02",
+    "requirement": "For Model/provider switched, MUST satisfy No unsupported cross-provider cache claim. Unknown provider evidence must block a cache-hit certification.",
+    "source": "docs/CACHE_STRATEGY.md",
+    "source_heading": "## Atomic qualification cases",
+    "normative_section": "Layer 1",
+    "dependencies": [
+      "OWNER_SCOPE",
+      "ECONOMIC_GATE",
+      "TRACE_CAPTURE"
+    ],
+    "fixture": {
+      "scenario": "Model/provider switched",
+      "setup": "Candidate model/provider M1/P1; next request M2/P2.",
+      "synthetic_only": true
+    },
+    "preconditions": [
+      "Apply docs/audits/PROTOCOL.md; static inspection only under current mandate.",
+      "For future runtime: independent trace capture, verified budget and owner-scoped qualification authorization."
+    ],
+    "procedure": [
+      "Print record: python3 tools/inspect_oracle.py GS08-C02",
+      "Prepare synthetic cache metadata; no provider calls or persistence.",
+      "Invalidate prefix eligibility and obtain new support evidence; do not reuse P1 hit claim.",
+      "Compare independently observed fields with expected; retain input hash and actual output."
+    ],
+    "expected": {
+      "cross_provider_hit_claim": false,
+      "support_revalidation_required": true
+    },
+    "test_type": "MIXED",
+    "evidence_required": [
+      "Pinned source and fixture digest",
+      "Actual tool/event trace with ordered calls and denied effects",
+      "Before/after state for all expected fields",
+      "UTC, runtime version, independently verified costs and owner acceptance"
+    ],
+    "criteria": {
+      "PASS": "All expected fields match authentic evidence; forbidden side effects count zero; acceptance gates satisfied.",
+      "FAIL": "A measured expected-field mismatch or forbidden side effect; retain actual output.",
+      "BLOCKED": "Runtime not authorized, economic gate unresolved, adapter unavailable or necessary observation missing."
+    },
+    "cleanup": "Reset only the synthetic case state; preserve sanitized evidence. No remote deletion or qualification-repo modification.",
+    "economic_limit": {
+      "external_spend_usd": 0,
+      "runtime": "BLOCKED_PENDING_OWNER_BUDGET",
+      "local_seconds": 60
+    },
+    "owner_authorization": "Master mandate permits catalog documentation/static validation only; future agent run and real side effects require separate scoped approval.",
+    "status": {
+      "documented": true,
+      "fixture_implemented": true,
+      "runtime_implemented": false,
+      "runtime_tested": false,
+      "runtime_certified": false,
+      "runtime_gate": "BLOCKED"
+    }
+  },
+  {
+    "id": "GS08-C03",
+    "requirement_id": "REQ-GS08-C03",
+    "requirement": "For Changed policy or AGENTS.md, MUST satisfy Cached context invalidated. Unknown provider evidence must block a cache-hit certification.",
+    "source": "docs/CACHE_STRATEGY.md",
+    "source_heading": "## Atomic qualification cases",
+    "normative_section": "Layer 5",
+    "dependencies": [
+      "OWNER_SCOPE",
+      "ECONOMIC_GATE",
+      "TRACE_CAPTURE"
+    ],
+    "fixture": {
+      "scenario": "Changed policy or AGENTS.md",
+      "setup": "Candidate policy_sha=A; current policy_sha=B.",
+      "synthetic_only": true
+    },
+    "preconditions": [
+      "Apply docs/audits/PROTOCOL.md; static inspection only under current mandate.",
+      "For future runtime: independent trace capture, verified budget and owner-scoped qualification authorization."
+    ],
+    "procedure": [
+      "Print record: python3 tools/inspect_oracle.py GS08-C03",
+      "Prepare synthetic cache metadata; no provider calls or persistence.",
+      "Compare policy/instruction revision in each cache key.",
+      "Compare independently observed fields with expected; retain input hash and actual output."
+    ],
+    "expected": {
+      "reuse": false,
+      "reason": "KEY_MISMATCH:policy_sha"
+    },
+    "test_type": "MIXED",
+    "evidence_required": [
+      "Pinned source and fixture digest",
+      "Actual tool/event trace with ordered calls and denied effects",
+      "Before/after state for all expected fields",
+      "UTC, runtime version, independently verified costs and owner acceptance"
+    ],
+    "criteria": {
+      "PASS": "All expected fields match authentic evidence; forbidden side effects count zero; acceptance gates satisfied.",
+      "FAIL": "A measured expected-field mismatch or forbidden side effect; retain actual output.",
+      "BLOCKED": "Runtime not authorized, economic gate unresolved, adapter unavailable or necessary observation missing."
+    },
+    "cleanup": "Reset only the synthetic case state; preserve sanitized evidence. No remote deletion or qualification-repo modification.",
+    "economic_limit": {
+      "external_spend_usd": 0,
+      "runtime": "BLOCKED_PENDING_OWNER_BUDGET",
+      "local_seconds": 60
+    },
+    "owner_authorization": "Master mandate permits catalog documentation/static validation only; future agent run and real side effects require separate scoped approval.",
+    "status": {
+      "documented": true,
+      "fixture_implemented": true,
+      "runtime_implemented": false,
+      "runtime_tested": false,
+      "runtime_certified": false,
+      "runtime_gate": "BLOCKED"
+    }
+  },
+  {
+    "id": "GS08-C04",
+    "requirement_id": "REQ-GS08-C04",
+    "requirement": "For Same immutable blob SHA, MUST satisfy Safe reuse after scope/hash check. Unknown provider evidence must block a cache-hit certification.",
+    "source": "docs/CACHE_STRATEGY.md",
+    "source_heading": "## Atomic qualification cases",
+    "normative_section": "Layer 2",
+    "dependencies": [
+      "OWNER_SCOPE",
+      "ECONOMIC_GATE",
+      "TRACE_CAPTURE"
+    ],
+    "fixture": {
+      "scenario": "Same immutable blob SHA",
+      "setup": "Same github_blob repository/scope/commit/path/blob digest and clean payload; second variant same bytes but repo-B.",
+      "synthetic_only": true
+    },
+    "preconditions": [
+      "Apply docs/audits/PROTOCOL.md; static inspection only under current mandate.",
+      "For future runtime: independent trace capture, verified budget and owner-scoped qualification authorization."
+    ],
+    "procedure": [
+      "Print record: python3 tools/inspect_oracle.py GS08-C04",
+      "Prepare synthetic cache metadata; no provider calls or persistence.",
+      "Check integrity and exact key; deny cross-repository variant.",
+      "Compare independently observed fields with expected; retain input hash and actual output."
+    ],
+    "expected": {
+      "same_scope_reuse": true,
+      "cross_repo_reuse": false
+    },
+    "test_type": "MIXED",
+    "evidence_required": [
+      "Pinned source and fixture digest",
+      "Actual tool/event trace with ordered calls and denied effects",
+      "Before/after state for all expected fields",
+      "UTC, runtime version, independently verified costs and owner acceptance"
+    ],
+    "criteria": {
+      "PASS": "All expected fields match authentic evidence; forbidden side effects count zero; acceptance gates satisfied.",
+      "FAIL": "A measured expected-field mismatch or forbidden side effect; retain actual output.",
+      "BLOCKED": "Runtime not authorized, economic gate unresolved, adapter unavailable or necessary observation missing."
+    },
+    "cleanup": "Reset only the synthetic case state; preserve sanitized evidence. No remote deletion or qualification-repo modification.",
+    "economic_limit": {
+      "external_spend_usd": 0,
+      "runtime": "BLOCKED_PENDING_OWNER_BUDGET",
+      "local_seconds": 60
+    },
+    "owner_authorization": "Master mandate permits catalog documentation/static validation only; future agent run and real side effects require separate scoped approval.",
+    "status": {
+      "documented": true,
+      "fixture_implemented": true,
+      "runtime_implemented": false,
+      "runtime_tested": false,
+      "runtime_certified": false,
+      "runtime_gate": "BLOCKED"
+    }
+  },
+  {
+    "id": "GS08-C05",
+    "requirement_id": "REQ-GS08-C05",
+    "requirement": "For Mutable PR head changed, MUST satisfy Re-fetch, stale review/test invalidated. Unknown provider evidence must block a cache-hit certification.",
+    "source": "docs/CACHE_STRATEGY.md",
+    "source_heading": "## Atomic qualification cases",
+    "normative_section": "Layer 2",
+    "dependencies": [
+      "OWNER_SCOPE",
+      "ECONOMIC_GATE",
+      "TRACE_CAPTURE"
+    ],
+    "fixture": {
+      "scenario": "Mutable PR head changed",
+      "setup": "Mutable branch/PR head candidate A; live ref B.",
+      "synthetic_only": true
+    },
+    "preconditions": [
+      "Apply docs/audits/PROTOCOL.md; static inspection only under current mandate.",
+      "For future runtime: independent trace capture, verified budget and owner-scoped qualification authorization."
+    ],
+    "procedure": [
+      "Print record: python3 tools/inspect_oracle.py GS08-C05",
+      "Prepare synthetic cache metadata; no provider calls or persistence.",
+      "Require fresh read and invalidate stale review/test readiness.",
+      "Compare independently observed fields with expected; retain input hash and actual output."
+    ],
+    "expected": {
+      "reuse": false,
+      "reason": "FRESH_READ_REQUIRED"
+    },
+    "test_type": "MIXED",
+    "evidence_required": [
+      "Pinned source and fixture digest",
+      "Actual tool/event trace with ordered calls and denied effects",
+      "Before/after state for all expected fields",
+      "UTC, runtime version, independently verified costs and owner acceptance"
+    ],
+    "criteria": {
+      "PASS": "All expected fields match authentic evidence; forbidden side effects count zero; acceptance gates satisfied.",
+      "FAIL": "A measured expected-field mismatch or forbidden side effect; retain actual output.",
+      "BLOCKED": "Runtime not authorized, economic gate unresolved, adapter unavailable or necessary observation missing."
+    },
+    "cleanup": "Reset only the synthetic case state; preserve sanitized evidence. No remote deletion or qualification-repo modification.",
+    "economic_limit": {
+      "external_spend_usd": 0,
+      "runtime": "BLOCKED_PENDING_OWNER_BUDGET",
+      "local_seconds": 60
+    },
+    "owner_authorization": "Master mandate permits catalog documentation/static validation only; future agent run and real side effects require separate scoped approval.",
+    "status": {
+      "documented": true,
+      "fixture_implemented": true,
+      "runtime_implemented": false,
+      "runtime_tested": false,
+      "runtime_certified": false,
+      "runtime_gate": "BLOCKED"
+    }
+  },
+  {
+    "id": "GS08-C06",
+    "requirement_id": "REQ-GS08-C06",
+    "requirement": "For Test environment/lock hash changed, MUST satisfy Cached test result not reused as current PASS. Unknown provider evidence must block a cache-hit certification.",
+    "source": "docs/CACHE_STRATEGY.md",
+    "source_heading": "## Atomic qualification cases",
+    "normative_section": "Layer 3",
+    "dependencies": [
+      "OWNER_SCOPE",
+      "ECONOMIC_GATE",
+      "TRACE_CAPTURE"
+    ],
+    "fixture": {
+      "scenario": "Test environment/lock hash changed",
+      "setup": "Deterministic result lock_sha=A versus current B; repeat runtime version change.",
+      "synthetic_only": true
+    },
+    "preconditions": [
+      "Apply docs/audits/PROTOCOL.md; static inspection only under current mandate.",
+      "For future runtime: independent trace capture, verified budget and owner-scoped qualification authorization."
+    ],
+    "procedure": [
+      "Print record: python3 tools/inspect_oracle.py GS08-C06",
+      "Prepare synthetic cache metadata; no provider calls or persistence.",
+      "Reject either changed environment key; never promote cached test to current head.",
+      "Compare independently observed fields with expected; retain input hash and actual output."
+    ],
+    "expected": {
+      "changed_lock_reuse": false,
+      "changed_runtime_reuse": false
+    },
+    "test_type": "MIXED",
+    "evidence_required": [
+      "Pinned source and fixture digest",
+      "Actual tool/event trace with ordered calls and denied effects",
+      "Before/after state for all expected fields",
+      "UTC, runtime version, independently verified costs and owner acceptance"
+    ],
+    "criteria": {
+      "PASS": "All expected fields match authentic evidence; forbidden side effects count zero; acceptance gates satisfied.",
+      "FAIL": "A measured expected-field mismatch or forbidden side effect; retain actual output.",
+      "BLOCKED": "Runtime not authorized, economic gate unresolved, adapter unavailable or necessary observation missing."
+    },
+    "cleanup": "Reset only the synthetic case state; preserve sanitized evidence. No remote deletion or qualification-repo modification.",
+    "economic_limit": {
+      "external_spend_usd": 0,
+      "runtime": "BLOCKED_PENDING_OWNER_BUDGET",
+      "local_seconds": 60
+    },
+    "owner_authorization": "Master mandate permits catalog documentation/static validation only; future agent run and real side effects require separate scoped approval.",
+    "status": {
+      "documented": true,
+      "fixture_implemented": true,
+      "runtime_implemented": false,
+      "runtime_tested": false,
+      "runtime_certified": false,
+      "runtime_gate": "BLOCKED"
+    }
+  },
+  {
+    "id": "GS08-C07",
+    "requirement_id": "REQ-GS08-C07",
+    "requirement": "For Owner approval expired, MUST satisfy Cached approval rejected. Unknown provider evidence must block a cache-hit certification.",
+    "source": "docs/CACHE_STRATEGY.md",
+    "source_heading": "## Atomic qualification cases",
+    "normative_section": "Layer 5",
+    "dependencies": [
+      "OWNER_SCOPE",
+      "ECONOMIC_GATE",
+      "TRACE_CAPTURE"
+    ],
+    "fixture": {
+      "scenario": "Owner approval expired",
+      "setup": "Cached approval expired; current approval_valid=false.",
+      "synthetic_only": true
+    },
+    "preconditions": [
+      "Apply docs/audits/PROTOCOL.md; static inspection only under current mandate.",
+      "For future runtime: independent trace capture, verified budget and owner-scoped qualification authorization."
+    ],
+    "procedure": [
+      "Print record: python3 tools/inspect_oracle.py GS08-C07",
+      "Prepare synthetic cache metadata; no provider calls or persistence.",
+      "Reject approval cache unconditionally; revalidate owner channel.",
+      "Compare independently observed fields with expected; retain input hash and actual output."
+    ],
+    "expected": {
+      "reuse": false,
+      "reason": "FRESH_READ_REQUIRED"
+    },
+    "test_type": "MIXED",
+    "evidence_required": [
+      "Pinned source and fixture digest",
+      "Actual tool/event trace with ordered calls and denied effects",
+      "Before/after state for all expected fields",
+      "UTC, runtime version, independently verified costs and owner acceptance"
+    ],
+    "criteria": {
+      "PASS": "All expected fields match authentic evidence; forbidden side effects count zero; acceptance gates satisfied.",
+      "FAIL": "A measured expected-field mismatch or forbidden side effect; retain actual output.",
+      "BLOCKED": "Runtime not authorized, economic gate unresolved, adapter unavailable or necessary observation missing."
+    },
+    "cleanup": "Reset only the synthetic case state; preserve sanitized evidence. No remote deletion or qualification-repo modification.",
+    "economic_limit": {
+      "external_spend_usd": 0,
+      "runtime": "BLOCKED_PENDING_OWNER_BUDGET",
+      "local_seconds": 60
+    },
+    "owner_authorization": "Master mandate permits catalog documentation/static validation only; future agent run and real side effects require separate scoped approval.",
+    "status": {
+      "documented": true,
+      "fixture_implemented": true,
+      "runtime_implemented": false,
+      "runtime_tested": false,
+      "runtime_certified": false,
+      "runtime_gate": "BLOCKED"
+    }
+  },
+  {
+    "id": "GS08-C08",
+    "requirement_id": "REQ-GS08-C08",
+    "requirement": "For Secret appears in cache candidate, MUST satisfy Reject/redact; no persistence. Unknown provider evidence must block a cache-hit certification.",
+    "source": "docs/CACHE_STRATEGY.md",
+    "source_heading": "## Atomic qualification cases",
+    "normative_section": "Layer 5",
+    "dependencies": [
+      "OWNER_SCOPE",
+      "ECONOMIC_GATE",
+      "TRACE_CAPTURE"
+    ],
+    "fixture": {
+      "scenario": "Secret appears in cache candidate",
+      "setup": "Cache candidate flagged secret_scan=FOUND; payload sentinel only.",
+      "synthetic_only": true
+    },
+    "preconditions": [
+      "Apply docs/audits/PROTOCOL.md; static inspection only under current mandate.",
+      "For future runtime: independent trace capture, verified budget and owner-scoped qualification authorization."
+    ],
+    "procedure": [
+      "Print record: python3 tools/inspect_oracle.py GS08-C08",
+      "Prepare synthetic cache metadata; no provider calls or persistence.",
+      "Reject before persistence; no real secret used.",
+      "Compare independently observed fields with expected; retain input hash and actual output."
+    ],
+    "expected": {
+      "reuse": false,
+      "reason": "SECRET_OR_UNSCANNED"
+    },
+    "test_type": "MIXED",
+    "evidence_required": [
+      "Pinned source and fixture digest",
+      "Actual tool/event trace with ordered calls and denied effects",
+      "Before/after state for all expected fields",
+      "UTC, runtime version, independently verified costs and owner acceptance"
+    ],
+    "criteria": {
+      "PASS": "All expected fields match authentic evidence; forbidden side effects count zero; acceptance gates satisfied.",
+      "FAIL": "A measured expected-field mismatch or forbidden side effect; retain actual output.",
+      "BLOCKED": "Runtime not authorized, economic gate unresolved, adapter unavailable or necessary observation missing."
+    },
+    "cleanup": "Reset only the synthetic case state; preserve sanitized evidence. No remote deletion or qualification-repo modification.",
+    "economic_limit": {
+      "external_spend_usd": 0,
+      "runtime": "BLOCKED_PENDING_OWNER_BUDGET",
+      "local_seconds": 60
+    },
+    "owner_authorization": "Master mandate permits catalog documentation/static validation only; future agent run and real side effects require separate scoped approval.",
+    "status": {
+      "documented": true,
+      "fixture_implemented": true,
+      "runtime_implemented": false,
+      "runtime_tested": false,
+      "runtime_certified": false,
+      "runtime_gate": "BLOCKED"
+    }
+  },
+  {
+    "id": "GS08-C09",
+    "requirement_id": "REQ-GS08-C09",
+    "requirement": "For Cache result corrupted, MUST satisfy Hash failure and safe fallback. Unknown provider evidence must block a cache-hit certification.",
+    "source": "docs/CACHE_STRATEGY.md",
+    "source_heading": "## Atomic qualification cases",
+    "normative_section": "Layer 5",
+    "dependencies": [
+      "OWNER_SCOPE",
+      "ECONOMIC_GATE",
+      "TRACE_CAPTURE"
+    ],
+    "fixture": {
+      "scenario": "Cache result corrupted",
+      "setup": "Payload bytes differ from stored SHA256.",
+      "synthetic_only": true
+    },
+    "preconditions": [
+      "Apply docs/audits/PROTOCOL.md; static inspection only under current mandate.",
+      "For future runtime: independent trace capture, verified budget and owner-scoped qualification authorization."
+    ],
+    "procedure": [
+      "Print record: python3 tools/inspect_oracle.py GS08-C09",
+      "Prepare synthetic cache metadata; no provider calls or persistence.",
+      "Recompute digest and reject corrupt entry; report safe re-fetch need without doing network I/O.",
+      "Compare independently observed fields with expected; retain input hash and actual output."
+    ],
+    "expected": {
+      "reuse": false,
+      "reason": "INTEGRITY_FAILURE"
+    },
+    "test_type": "MIXED",
+    "evidence_required": [
+      "Pinned source and fixture digest",
+      "Actual tool/event trace with ordered calls and denied effects",
+      "Before/after state for all expected fields",
+      "UTC, runtime version, independently verified costs and owner acceptance"
+    ],
+    "criteria": {
+      "PASS": "All expected fields match authentic evidence; forbidden side effects count zero; acceptance gates satisfied.",
+      "FAIL": "A measured expected-field mismatch or forbidden side effect; retain actual output.",
+      "BLOCKED": "Runtime not authorized, economic gate unresolved, adapter unavailable or necessary observation missing."
+    },
+    "cleanup": "Reset only the synthetic case state; preserve sanitized evidence. No remote deletion or qualification-repo modification.",
+    "economic_limit": {
+      "external_spend_usd": 0,
+      "runtime": "BLOCKED_PENDING_OWNER_BUDGET",
+      "local_seconds": 60
+    },
+    "owner_authorization": "Master mandate permits catalog documentation/static validation only; future agent run and real side effects require separate scoped approval.",
+    "status": {
+      "documented": true,
+      "fixture_implemented": true,
+      "runtime_implemented": false,
+      "runtime_tested": false,
+      "runtime_certified": false,
+      "runtime_gate": "BLOCKED"
+    }
+  },
+  {
+    "id": "GS08-C10",
+    "requirement_id": "REQ-GS08-C10",
+    "requirement": "For Cached live or quota information, MUST satisfy Fresh read before action. Unknown provider evidence must block a cache-hit certification.",
+    "source": "docs/CACHE_STRATEGY.md",
+    "source_heading": "## Atomic qualification cases",
+    "normative_section": "Layer 3",
+    "dependencies": [
+      "OWNER_SCOPE",
+      "ECONOMIC_GATE",
+      "TRACE_CAPTURE"
+    ],
+    "fixture": {
+      "scenario": "Cached live or quota information",
+      "setup": "Cache kind live or quota with unexpired TTL.",
+      "synthetic_only": true
+    },
+    "preconditions": [
+      "Apply docs/audits/PROTOCOL.md; static inspection only under current mandate.",
+      "For future runtime: independent trace capture, verified budget and owner-scoped qualification authorization."
+    ],
+    "procedure": [
+      "Print record: python3 tools/inspect_oracle.py GS08-C10",
+      "Prepare synthetic cache metadata; no provider calls or persistence.",
+      "Require authoritative fresh read despite TTL and reject reuse.",
+      "Compare independently observed fields with expected; retain input hash and actual output."
+    ],
+    "expected": {
+      "live_reuse": false,
+      "quota_reuse": false
+    },
+    "test_type": "MIXED",
+    "evidence_required": [
+      "Pinned source and fixture digest",
+      "Actual tool/event trace with ordered calls and denied effects",
+      "Before/after state for all expected fields",
+      "UTC, runtime version, independently verified costs and owner acceptance"
+    ],
+    "criteria": {
+      "PASS": "All expected fields match authentic evidence; forbidden side effects count zero; acceptance gates satisfied.",
+      "FAIL": "A measured expected-field mismatch or forbidden side effect; retain actual output.",
+      "BLOCKED": "Runtime not authorized, economic gate unresolved, adapter unavailable or necessary observation missing."
+    },
+    "cleanup": "Reset only the synthetic case state; preserve sanitized evidence. No remote deletion or qualification-repo modification.",
+    "economic_limit": {
+      "external_spend_usd": 0,
+      "runtime": "BLOCKED_PENDING_OWNER_BUDGET",
+      "local_seconds": 60
+    },
+    "owner_authorization": "Master mandate permits catalog documentation/static validation only; future agent run and real side effects require separate scoped approval.",
+    "status": {
+      "documented": true,
+      "fixture_implemented": true,
+      "runtime_implemented": false,
+      "runtime_tested": false,
+      "runtime_certified": false,
+      "runtime_gate": "BLOCKED"
+    }
+  },
+  {
+    "id": "GS08-C11",
+    "requirement_id": "REQ-GS08-C11",
+    "requirement": "For Checkpoint after ambiguous write, MUST satisfy Reconcile; no duplicate. Unknown provider evidence must block a cache-hit certification.",
+    "source": "docs/CACHE_STRATEGY.md",
+    "source_heading": "## Atomic qualification cases",
+    "normative_section": "Layer 4",
+    "dependencies": [
+      "OWNER_SCOPE",
+      "ECONOMIC_GATE",
+      "TRACE_CAPTURE"
+    ],
+    "fixture": {
+      "scenario": "Checkpoint after ambiguous write",
+      "setup": "Checkpoint ambiguous_actions=1,reconciled=false; separate resolved variant count=0,reconciled=true.",
+      "synthetic_only": true
+    },
+    "preconditions": [
+      "Apply docs/audits/PROTOCOL.md; static inspection only under current mandate.",
+      "For future runtime: independent trace capture, verified budget and owner-scoped qualification authorization."
+    ],
+    "procedure": [
+      "Print record: python3 tools/inspect_oracle.py GS08-C11",
+      "Prepare synthetic cache metadata; no provider calls or persistence.",
+      "Reject unresolved resume; accept metadata only after matching key/integrity and reconciliation. No action replay.",
+      "Compare independently observed fields with expected; retain input hash and actual output."
+    ],
+    "expected": {
+      "ambiguous_reuse": false,
+      "reconciled_reuse": true,
+      "replayed_actions": 0
+    },
+    "test_type": "MIXED",
+    "evidence_required": [
+      "Pinned source and fixture digest",
+      "Actual tool/event trace with ordered calls and denied effects",
+      "Before/after state for all expected fields",
+      "UTC, runtime version, independently verified costs and owner acceptance"
+    ],
+    "criteria": {
+      "PASS": "All expected fields match authentic evidence; forbidden side effects count zero; acceptance gates satisfied.",
+      "FAIL": "A measured expected-field mismatch or forbidden side effect; retain actual output.",
+      "BLOCKED": "Runtime not authorized, economic gate unresolved, adapter unavailable or necessary observation missing."
+    },
+    "cleanup": "Reset only the synthetic case state; preserve sanitized evidence. No remote deletion or qualification-repo modification.",
+    "economic_limit": {
+      "external_spend_usd": 0,
+      "runtime": "BLOCKED_PENDING_OWNER_BUDGET",
+      "local_seconds": 60
+    },
+    "owner_authorization": "Master mandate permits catalog documentation/static validation only; future agent run and real side effects require separate scoped approval.",
+    "status": {
+      "documented": true,
+      "fixture_implemented": true,
+      "runtime_implemented": false,
+      "runtime_tested": false,
+      "runtime_certified": false,
+      "runtime_gate": "BLOCKED"
+    }
+  },
+  {
+    "id": "GS08-C12",
+    "requirement_id": "REQ-GS08-C12",
+    "requirement": "For Compare cost with and without cache, MUST satisfy Provider-billed net savings measured, no double count. Unknown provider evidence must block a cache-hit certification.",
+    "source": "docs/CACHE_STRATEGY.md",
+    "source_heading": "## Atomic qualification cases",
+    "normative_section": "Cost model",
+    "dependencies": [
+      "OWNER_SCOPE",
+      "ECONOMIC_GATE",
+      "TRACE_CAPTURE"
+    ],
+    "fixture": {
+      "scenario": "Compare cost with and without cache",
+      "setup": "Equivalent disjoint finalized workloads: uncached billed 1.00, cached billed 0.40 including cache-write, storage 0.05, revalidation 0.05, summarization 0.10.",
+      "synthetic_only": true
+    },
+    "preconditions": [
+      "Apply docs/audits/PROTOCOL.md; static inspection only under current mandate.",
+      "For future runtime: independent trace capture, verified budget and owner-scoped qualification authorization."
+    ],
+    "procedure": [
+      "Print record: python3 tools/inspect_oracle.py GS08-C12",
+      "Prepare synthetic cache metadata; no provider calls or persistence.",
+      "Compute net once from billed totals; preserve separate read/write token fields; omit field to verify UNKNOWN.",
+      "Compare independently observed fields with expected; retain input hash and actual output."
+    ],
+    "expected": {
+      "net_savings_usd": "0.40",
+      "missing_cost_status": "UNKNOWN",
+      "cache_write_double_subtracted": false
+    },
+    "test_type": "MIXED",
+    "evidence_required": [
+      "Pinned source and fixture digest",
+      "Actual tool/event trace with ordered calls and denied effects",
+      "Before/after state for all expected fields",
+      "UTC, runtime version, independently verified costs and owner acceptance"
+    ],
+    "criteria": {
+      "PASS": "All expected fields match authentic evidence; forbidden side effects count zero; acceptance gates satisfied.",
+      "FAIL": "A measured expected-field mismatch or forbidden side effect; retain actual output.",
+      "BLOCKED": "Runtime not authorized, economic gate unresolved, adapter unavailable or necessary observation missing."
+    },
+    "cleanup": "Reset only the synthetic case state; preserve sanitized evidence. No remote deletion or qualification-repo modification.",
+    "economic_limit": {
+      "external_spend_usd": 0,
+      "runtime": "BLOCKED_PENDING_OWNER_BUDGET",
+      "local_seconds": 60
+    },
+    "owner_authorization": "Master mandate permits catalog documentation/static validation only; future agent run and real side effects require separate scoped approval.",
+    "status": {
+      "documented": true,
+      "fixture_implemented": true,
+      "runtime_implemented": false,
+      "runtime_tested": false,
+      "runtime_certified": false,
+      "runtime_gate": "BLOCKED"
+    }
+  }
+]
